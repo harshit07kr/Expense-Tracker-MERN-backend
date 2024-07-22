@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 //middlewares
 app.use(express.json())
 app.use(cors({
-  origin: 'http://localhost:3000', // Your frontend URL
+  origin: 'https://sweet-monstera-672ffa.netlify.app', // Your frontend URL
   credentials: true,
 }));
   
