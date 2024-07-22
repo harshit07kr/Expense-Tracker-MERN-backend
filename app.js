@@ -12,9 +12,20 @@ const PORT = process.env.PORT || 5000;
 
 //middlewares
 app.use(express.json())
+const allowedOrigins = [
+  'https://main--sweet-monstera-672ffa.netlify.app',
+  // Add other origins as needed
+];
+
 app.use(cors({
-  origin: 'https://sweet-monstera-672ffa.netlify.app', // Your frontend URL
-  credentials: true,
+  origin: function(origin, callback) {
+    if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true // If you are using cookies
 }));
   
 app.use(cookieParser());
