@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json())
 const allowedOrigins = [
   'https://main--sweet-monstera-672ffa.netlify.app',
+  'https://sweet-monstera-672ffa.netlify.app', // Add this line
   // Add other origins as needed
 ];
 
